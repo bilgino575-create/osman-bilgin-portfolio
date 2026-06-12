@@ -47,9 +47,9 @@ export default function Navbar() {
   useEffect(() => {
     document.documentElement.style.overflow = menuOpen ? "hidden" : "";
     if (menuOpen) {
-      window.lenis?.stop();
+      window.__lenis?.stop();
     } else {
-      window.lenis?.start();
+      window.__lenis?.start();
     }
   }, [menuOpen]);
 

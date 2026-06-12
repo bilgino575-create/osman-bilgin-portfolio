@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 declare global {
   interface Window {
-    lenis?: Lenis;
+    __lenis?: Lenis;
   }
 }
 
@@ -24,7 +24,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       touchMultiplier: 1.5,
     });
 
-    window.lenis = lenis;
+    window.__lenis = lenis;
     lenis.stop();
 
     lenis.on("scroll", ScrollTrigger.update);
@@ -43,8 +43,8 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       window.removeEventListener("app:loaded", handleAppLoaded);
       gsap.ticker.remove(tickerCallback);
       lenis.destroy();
-      if (window.lenis === lenis) {
-        window.lenis = undefined;
+      if (window.__lenis === lenis) {
+        window.__lenis = undefined;
       }
     };
   }, []);
