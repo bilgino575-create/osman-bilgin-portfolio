@@ -136,34 +136,11 @@ export default function Hero() {
           Available for new projects
         </motion.div>
 
-        <h1 className="font-display font-bold uppercase leading-[0.88] tracking-tight">
-          <span className="block overflow-hidden">
-            <motion.span
-              initial={{ y: "100%" }}
-              animate={loaded ? { y: "0%" } : undefined}
-              transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="block text-[clamp(3rem,13vw,10.5rem)] text-primary"
-            >
-              {siteConfig.firstName}
-            </motion.span>
-          </span>
-          <span className="block overflow-hidden">
-            <motion.span
-              initial={{ y: "100%" }}
-              animate={loaded ? { y: "0%" } : undefined}
-              transition={{ duration: 0.9, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
-              className="text-gradient-static animate-gradient-text block text-[clamp(3rem,13vw,10.5rem)]"
-            >
-              {siteConfig.lastName}
-            </motion.span>
-          </span>
-        </h1>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={loaded ? { opacity: 1, y: 0 } : undefined}
-          transition={{ duration: 0.7, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 font-display text-xl font-medium uppercase tracking-wide text-secondary sm:text-2xl md:text-3xl"
+          transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-2 font-display text-2xl font-bold uppercase tracking-wide text-secondary sm:text-3xl md:text-4xl"
         >
           <span className="text-primary">/</span>
           <RoleCycler titles={siteConfig.titles} />
